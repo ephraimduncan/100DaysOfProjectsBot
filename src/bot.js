@@ -6,7 +6,12 @@ console.log('==== #100DaysOfProject Bot Starting... ====');
 const Twit = require('twit');
 // Configuration
 const config = require('./config');
-const TwitterBot = new Twit(config);
+const TwitterBot = new Twit({
+  consumer_key: process.env.BOT_CONSUMER_KEY,
+  consumer_secret: process.env.BOT_CONSUMER_SECRET,
+  access_token: process.env.BOT_ACCESS_TOKEN,
+  access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET,
+});
 
 // API
 
